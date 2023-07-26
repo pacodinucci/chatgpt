@@ -79,7 +79,7 @@ const handleSubmit = async (e) => {
 
   //fetch data from server -> bot's response
 
-  const response = await fetch('http://localhost:5000', {
+  const response = await fetch('https://copiadegpt.onrender.com', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -95,7 +95,7 @@ const handleSubmit = async (e) => {
   if(response.ok) {
     const data = await response.json();
     const parsedData = data.bot.trim();
-
+ 
     typeText(messageDiv, parsedData);
   } else {
     const err = await response.text();
